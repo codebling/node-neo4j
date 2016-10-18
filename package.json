@@ -27,6 +27,7 @@
         "clean": "rm -f lib-new/*.{js,map}",
         "lint": "git ls-files | grep coffee$ | grep -v '\\-old/' | xargs coffeelint",
         "prepublish": "npm run build",
+        "postinstall": "npm run build",
         "postpublish": "npm run clean",
         "test": "mocha test-new"
     },
