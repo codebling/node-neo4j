@@ -4,6 +4,8 @@ module.exports = class Relationship
 
     constructor: (opts={}) ->
         {@_id, @type, @properties, @_fromId, @_toId} = opts
+        for key of opts.properties
+            this[key] = opts.properties[key];
 
     equals: (other) ->
         # TODO: Is this good enough? Often don't want exact equality, e.g.
